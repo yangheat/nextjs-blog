@@ -21,3 +21,11 @@ npx create-next-app nextjs-blog --use-npm
 -- 외부 링크로 연결할 때는 <a> 태그를 이용해야 한다.
 - <a> 태그는 페이지를 다시 불러온다.
 
+### <Image> 컴포넌트
+- <Image> 컴포넌트는 성능을 최적화한다.
+-- Size Optimization
+--- WebP, AVIF 등 최신 이미지 형식을 이용하여 자동으로 제공
+-- Faster Page Loads
+--- Viewport에포함되었을 때 Prefetching처럼 Lazy load를 한다.
+--- <Link> 컴포넌트의 Prefetching 참고
+-- 동일한 이미지를 사용하는 경우 하나만 불러옴
