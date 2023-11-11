@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
+### 프로젝트 생성
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app nextjs-blog --use-npm
+--example "https://github.com/vercel/next-learn/tree/main/basics/learn-starter"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### <Link> 컴포넌트와 <a> Tag의 차이
+- <Link> 컴포넌트는 Next.js에서 <a> 태그에 최적화 기능이 포함된 페이지 이동 컴포넌트이다.
+-- <Link> 컴포넌트는 페이지에 필요한 데이터만 추가적으로 불러온다.
+--- <Link> 컴포넌트는 성능을 최적화한다.
+---- Client Side Navigate
+----- 브라우저에서 URL을 직접 이동하는 것과 달리 JS상에서 page 컴포넌트를 교체한다.
+------ 해당 기능을 테스트하기 위해서는 <body> 태그에 background 스타일을 변경하여 테스트한다.
+------- <Link> 컴포넌트는 스타일이 변경되지 않고 배경색이 변경되지 않지만 <a> 태그는 스타일이 초기화되고 배경색이 초기화된다.
+---- Code Splitting
+----- Next.js는 Automatic Code Splitting을 제공한다.
+------ 페이지 이동 시 목적지 페이지에 필요한 chunk만 추가 로드한다.
+---- Prefetching
+----- Viewport에 <Link> 컴포넌트가 노출되었을 때 href로 연결된 페이지의 chunk를 로드한다.
+------ 브라우저에 <Link> 컴포넌트가 노출되었을 때 해당 컴포넌트에 필요한 데이터를 로드
+-- 외부 링크로 연결할 때는 <a> 태그를 이용해야 한다.
+- <a> 태그는 페이지를 다시 불러온다.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
