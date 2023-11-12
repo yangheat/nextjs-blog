@@ -26,6 +26,10 @@ npx create-next-app nextjs-blog --use-npm
 -- Size Optimization
 --- WebP, AVIF 등 최신 이미지 형식을 이용하여 자동으로 제공
 -- Faster Page Loads
---- Viewport에포함되었을 때 Prefetching처럼 Lazy load를 한다.
+--- Viewport에 포함되었을 때 Prefetching처럼 Lazy load를 한다.
 --- <Link> 컴포넌트의 Prefetching 참고
 -- 동일한 이미지를 사용하는 경우 하나만 불러옴
+
+### Metadata
+- Pages Router 기반 Next.js에는 <Head> 컴포넌트에서 관리하던 Metadata 관리한다.
+- App Router 기반 Next.js에는 layout.js 또는 page.js 파일의 'static metadata'와 'dynamic generateMetadata에서 export한다.
