@@ -33,5 +33,8 @@ npx create-next-app nextjs-blog --use-npm
 - Pages Router 기반 Next.js에는 <Head> 컴포넌트에서 관리하던 Metadata 관리한다.
 - App Router 기반 Next.js에는 layout.js 또는 page.js 파일의 'static metadata'와 'dynamic generateMetadata에서 export한다.
 
+### SSG(Static Site Generation)
+- 빌드 시 파일을 생성
+
 ### SSR(Server Side Rendering)
 - 사용자가 브라우저에 접근할 때 생성
