@@ -1,5 +1,6 @@
 import { getSortedPostsData } from "../../../../lib/post";
 import utilStyles from "../styles/utils.module.css";
+import Content from "./content";
 
 export default function page() {
   const allPostsData = getSortedPostsData()
@@ -15,7 +16,7 @@ export default function page() {
       {/* Keep the existing code here */}
       
       {/* Add this <section> tag below the existing <section> tag */}
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
           <h2 className={utilStyles.headingLg}>Blog</h2>
           <ul className={utilStyles.list}>
             {allPostsData.map(({ id, date, title }) => (
@@ -28,7 +29,9 @@ export default function page() {
               </li>
             ))}
           </ul>
-        </section>
+        </section> */}
+        
+        <Content />
     </>
   );
 }
