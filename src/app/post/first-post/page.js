@@ -1,9 +1,15 @@
-import { getSortedPostsData } from "../../../../lib/post";
 import utilStyles from "../styles/utils.module.css";
-import Content from "./content";
+// import Content from "./content";
 
-export default function page() {
-  const allPostsData = getSortedPostsData()
+async function getContent () {
+  const response = await fetch('http://localhost:3000/api/posts')
+  const json = await response.json()
+  return json.allPostData
+}
+
+export default async function Page() {
+  const allPostsData = await getContent()
+
   return (
     <>
       <section className={utilStyles.headingMd}>
@@ -16,7 +22,7 @@ export default function page() {
       {/* Keep the existing code here */}
       
       {/* Add this <section> tag below the existing <section> tag */}
-      {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
           <h2 className={utilStyles.headingLg}>Blog</h2>
           <ul className={utilStyles.list}>
             {allPostsData.map(({ id, date, title }) => (
@@ -29,9 +35,9 @@ export default function page() {
               </li>
             ))}
           </ul>
-        </section> */}
+        </section>
         
-        <Content />
+        {/* <Content /> */}
     </>
   );
 }
