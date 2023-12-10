@@ -16,49 +16,32 @@ export const metadata = {
   }
 };
 
-export default function layout({ children, home }) {
-  console.log("home", home);
+export default function layout({ children }) {
   return (
     <div className={layoutStyles.container}>
       <header className={layoutStyles.header}>
-        {home ? (
-          <>
+        <>
+          <Link href="/">
             <Image
               priority
               src="/images/profile.jpg"
               className={utilStyles.borderCircle}
-              height={144}
-              width={144}
+              height={108}
+              width={108}
               alt=""
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt=""
-              />
+          </Link>
+          <h2 className={utilStyles.headingLg}>
+            <Link href="/" className={utilStyles.colorInherit}>
+              {name}
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h2>
-          </>
-        )}
+          </h2>
+        </>
       </header>
       <main>{children}</main>
-      {!home && (
-        <div className={layoutStyles.backToHome}>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )}
+      <div className={layoutStyles.backToHome}>
+        <Link href="/">← Back to home</Link>
+      </div>
     </div>
   );
 }
