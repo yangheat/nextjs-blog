@@ -7,7 +7,7 @@ async function getContent () {
   return json.allPostData
 }
 
-export default async function Page() {
+export default async function page() {
   const allPostsData = await getContent()
 
   return (
