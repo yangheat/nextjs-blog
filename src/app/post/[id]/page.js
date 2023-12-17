@@ -1,24 +1,25 @@
+import Date from "../../components/date"
 import { getAllPostIds, getPostData } from "../../../../lib/posts"
+import utilStyles from '../styles/utils.module.css';
 
 export function generateStaticParams () {
     const params = getAllPostIds()
-    console.log('generateStaitcParmas')
     return params.map((param) => ({
         id: param.id
     }))
 }
 
-export default function Page({ params }) {
+export default async function Page({ params }) {
     const { id } = params
     
-    const postData = getPostData(id)
+    const postData = await getPostData(id)
   return (
     <>
-        {postData.title}
-        <br />
-        {postData.id}
-        <br />
-        {postData.date}
+      <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+      <div className={utilStyles.lightText}>
+        <Date dateString={postData.date} />
+      </div>
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </>
   )
 }
