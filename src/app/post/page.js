@@ -1,16 +1,11 @@
 import Link from "next/link";
-import { getAllPostIds } from "../../../lib/posts";
+import { getSortedPostsData } from "../../../lib/posts";
 import Date from "../components/date";
 import utilStyles from "./styles/utils.module.css";
 
-async function getContent() {
-  const response = await fetch("http://localhost:3000/api/posts");
-  const json = await response.json();
-  return json.allPostData;
-}
-
-export default async function Page() {
-  const allPostsData = await getContent();
+export default function Page() {
+  const allPostsData = getSortedPostsData()
+  
   return (
     <>
       {allPostsData.map(({ id, date, title }) => (
