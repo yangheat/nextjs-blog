@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getSortedPostsData } from "../../../lib/posts";
 import Date from "../components/date";
 import utilStyles from "./styles/utils.module.css";
+import layoutStyles from "./styles/layout.module.css";
 
 export default function Page() {
   const allPostsData = getSortedPostsData()
@@ -17,6 +18,9 @@ export default function Page() {
           </small>
         </li>
       ))}
+      <div className={layoutStyles.backToHome}>
+        <Link href="/">← Back to home</Link>
+      </div>
     </>
   );
 }

@@ -39,9 +39,6 @@ export default function layout({ children }) {
         </>
       </header>
       <main>{children}</main>
-      <div className={layoutStyles.backToHome}>
-        <Link href="/post">← Back to home</Link>
-      </div>
     </div>
   );
 }
