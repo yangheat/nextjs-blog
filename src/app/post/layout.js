@@ -3,6 +3,7 @@ import layoutStyles from "./styles/layout.module.css"
 import utilStyles from "./styles/utils.module.css"
 import Link from "next/link"
 import ThemeIcon from "../components/ThemeIcon"
+import BackPage from "../components/BackPage"
 
 const name = "Your Name"
 const siteTitle = "Next.js Sample Website"
@@ -42,6 +43,7 @@ export default function Layout({ children }) {
           </h2>
         </header>
         {children}
+        <BackPage />
       </div>
     </div>
   )
