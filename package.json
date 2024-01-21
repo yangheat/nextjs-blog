@@ -13,17 +13,19 @@
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
     "next": "14.0.1",
+    "next-mdx-remote": "^4.4.1",
     "prettier": "^3.0.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-syntax-highlighter": "^15.5.0",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
   }
 }
