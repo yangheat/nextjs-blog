@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "start-api": "next dev -p 3001",
     "lint": "next lint"
@@ -14,6 +15,7 @@
     "gray-matter": "^4.0.3",
     "next": "14.0.1",
     "next-mdx-remote": "^4.4.1",
+    "next-sitemap": "^4.2.3",
     "prettier": "^3.0.3",
     "react": "^18",
     "react-dom": "^18",
