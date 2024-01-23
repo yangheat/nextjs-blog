@@ -4,10 +4,8 @@ import { getAllPostIds, getPostData } from '../../../../lib/posts'
 import utilStyles from '../styles/utils.module.css'
 
 export function generateStaticParams() {
-  const params = getAllPostIds()
-  return params.map((param) => ({
-    id: param.id,
-  }))
+  const postInfos = getAllPostIds()
+  return postInfos.map((postInfo) => postInfo.params)
 }
 
 export default async function Page({ params }) {
