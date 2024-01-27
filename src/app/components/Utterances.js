@@ -1,7 +1,6 @@
 'use client'
 
 export default function Utterances() {
-  console.log('test')
   return (
     <section
       ref={(elem) => {
