@@ -2,6 +2,7 @@ import Date from '../../components/date'
 import MdxContent from '../../components/MdxContent'
 import { getAllPostIds, getPostData } from '../../../../lib/posts'
 import utilStyles from '../styles/utils.module.css'
+import Utterances from '@/app/components/Utterances'
 
 export function generateStaticParams() {
   const postInfos = getAllPostIds()
@@ -21,6 +22,7 @@ export default async function Page({ params }) {
         <div dangerouslySetInnerHTML={{ __html: postData.mdExtContentHtml }} />
       )}
       {postData.mdxSource && <MdxContent source={postData.mdxSource} />}
+      <Utterances />
     </>
   )
 }
