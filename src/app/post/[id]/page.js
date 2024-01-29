@@ -2,12 +2,11 @@ import Date from '../../components/date'
 import MdxContent from '../../components/MdxContent'
 import { getAllPostIds, getPostData } from '../../../../lib/posts'
 import utilStyles from '../styles/utils.module.css'
+import Utterances from '@/app/components/Utterances'
 
 export function generateStaticParams() {
-  const params = getAllPostIds()
-  return params.map((param) => ({
-    id: param.id,
-  }))
+  const postInfos = getAllPostIds()
+  return postInfos.map((postInfo) => postInfo.params)
 }
 
 export default async function Page({ params }) {
@@ -23,6 +22,7 @@ export default async function Page({ params }) {
         <div dangerouslySetInnerHTML={{ __html: postData.mdExtContentHtml }} />
       )}
       {postData.mdxSource && <MdxContent source={postData.mdxSource} />}
+      <Utterances />
     </>
   )
 }

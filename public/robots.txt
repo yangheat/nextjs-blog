@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nextjs-blog-yangheat.vercel.app/
+
+# Sitemaps
+Sitemap: https://nextjs-blog-yangheat.vercel.app/sitemap.xml

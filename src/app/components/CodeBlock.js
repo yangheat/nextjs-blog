@@ -4,7 +4,6 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 const CopyButton = ({ target }) => {
   const handleCopy = async () => {
     try {
-      console.log(target)
       await navigator.clipboard.writeText(target)
       alert('copied')
     } catch (error) {
