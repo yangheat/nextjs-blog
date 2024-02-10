@@ -1,8 +1,8 @@
-import Date from '../../components/date'
-import MdxContent from '../../components/MdxContent'
+import Date from '@/components/date'
+import MdxContent from '@/components/MdxContent'
 import { getAllPostIds, getPostData } from '../../../../lib/posts'
 import utilStyles from '../styles/utils.module.css'
-import Utterances from '@/app/components/Utterances'
+import Utterances from '@/components/Utterances'
 
 export function generateStaticParams() {
   const postInfos = getAllPostIds()

@@ -1,7 +1,7 @@
-import Link from "next/link"
-import { getSortedPostsData } from "../../../lib/posts"
-import Date from "../components/date"
-import utilStyles from "./styles/utils.module.css"
+import Link from 'next/link'
+import { getSortedPostsData } from '../../../lib/posts'
+import Date from '@/components/date'
+import utilStyles from './styles/utils.module.css'
 
 export default function Page() {
   const allPostsData = getSortedPostsData()
