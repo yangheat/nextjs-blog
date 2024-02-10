@@ -1,6 +1,8 @@
 'use client'
 
-export default function Utterances() {
+import { memo } from 'react'
+
+function Utterances() {
   return (
     <section
       ref={(elem) => {
@@ -21,3 +23,5 @@ export default function Utterances() {
     />
   )
 }
+
+export default memo(Utterances)

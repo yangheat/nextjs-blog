@@ -2,17 +2,11 @@
 
 import CodeBlock from './CodeBlock'
 import { MDXRemote } from 'next-mdx-remote'
+import dynamic from 'next/dynamic'
 
-const Button = ({ children }) => {
-  return (
-    <button
-      className="bg-black dark:bg-white text-lg text-teal-200 dark:text-teal-700 rounded-lg px-5 "
-      onClick={() => alert(`thanks to ${children}`)}
-    >
-      {children}
-    </button>
-  )
-}
+const Button = dynamic(() => import('./Button'), {
+  loading: () => <p>Loading...</p>,
+})
 const components = { Button, CodeBlock }
 
 export default function MdxContent({ source }) {
