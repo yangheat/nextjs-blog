@@ -4,7 +4,7 @@ import utilStyles from './styles/utils.module.css'
 import Link from 'next/link'
 import ThemeIcon from '@/components/ThemeIcon'
 import BackPage from '@/components/BackPage'
-
+import CurrentState from '@/components/CurrentState'
 const name = 'Your Name'
 const siteTitle = 'Next.js Sample Website'
 
@@ -42,6 +42,7 @@ export default function Layout({ children }) {
             </Link>
           </h2>
         </header>
+        <CurrentState />
         {children}
         <BackPage />
       </div>
