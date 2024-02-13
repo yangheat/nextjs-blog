@@ -1,12 +1,16 @@
-import Date from '../../components/date'
-import MdxContent from '../../components/MdxContent'
-import { getAllPostIds, getPostData } from '../../../../lib/posts'
+import Date from '@/components/date'
+import MdxContent from '@/components/MdxContent'
+import { getPostData } from '../../../../lib/posts'
 import utilStyles from '../styles/utils.module.css'
-import Utterances from '@/app/components/Utterances'
+import Utterances from '@/components/Utterances'
+import { BROWER_MAIN_TITLE } from 'src/app/layout'
 
-export function generateStaticParams() {
-  const postInfos = getAllPostIds()
-  return postInfos.map((postInfo) => postInfo.params)
+export async function generateMetadata({ params }) {
+  const id = params.id
+  const postData = await getPostData(id)
+  return {
+    title: `${postData.title} - ${BROWER_MAIN_TITLE}`,
+  }
 }
 
 export default async function Page({ params }) {
