@@ -5,7 +5,7 @@ import utilStyles from '../styles/utils.module.css'
 import Utterances from '@/components/Utterances'
 import { BROWER_MAIN_TITLE } from 'src/app/layout'
 
-export async function generateMetadata({ params, searchParams }, parent) {
+export async function generateMetadata({ params }) {
   const id = params.id
   const postData = await getPostData(id)
   return {
