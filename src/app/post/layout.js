@@ -13,13 +13,12 @@ export const metadata = {
   metadataBase: new URL('https://og-image.vercel.app'),
   openGraph: {
     title: siteTitle,
-    image: `/${encodeURI(
+    images: `/${encodeURI(
       siteTitle
     )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`,
     ['twitter:card']: 'summary_large_image',
   },
 }
-
 export default function Layout({ children }) {
   return (
     <div className="bg-pink-50 dark:bg-black text-gray-800 dark:text-gray-200 min-h-screen">
