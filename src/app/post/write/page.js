@@ -1,9 +1,17 @@
 'use client'
 
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Page() {
+  const router = useRouter()
+
+  useEffect(() => {
+    // dev 상태에선 동작하지 않음
+    router.prefetch('/post/ssg-ssr')
+  }, [])
+
   const [showLink, setShowLink] = useState(false)
   const idRef = useRef()
   const titleRef = useRef()
@@ -81,6 +89,69 @@ export default function Page() {
       {showLink && (
         <Link href={`/post/${idRef.current.value}`}>Created Post</Link>
       )}
+      <br />
+      <br />
+      <button
+        className="bg-pink-200 rounded px-2"
+        onClick={() => router.push('/post/ssg-ssr', { scroll: false })}
+      >
+        router.push
+      </button>
+      <br />
+      <br />
+      <button
+        className="bg-pink-200 rounded px-2"
+        onClick={() => router.replace('/post/ssg-ssr')}
+      >
+        router.replace
+      </button>
+      <br />
+      <br />
+      <button
+        className="bg-pink-200 rounded px-2"
+        onClick={() => router.back()}
+      >
+        router.back
+      </button>
+      <br />
+      <br />
+      <button
+        className="bg-pink-200 rounded px-2"
+        onClick={() => router.refresh()}
+      >
+        router.refresh
+      </button>
+      <br />
+      <br />
+      <button
+        className="bg-pink-200 rounded px-2"
+        onClick={() => router.forward()}
+      >
+        router.forward
+      </button>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      {/**
+       * scroll 옵션을 true로 주는 경우 스크롤이 이동하지 않음
+       * scroll 옵션을 false로 주는 경우 스크롤이 이동함.
+       * 특이점은 false로 주는 경우 처음 화면에 접근하는 경우에는 스크롤이 이동하지 않음
+       * prefetch 기능을 추가하면 스크롤이 이동하는 겻으로 보아 한 번 이상 화면이 로딩되어야하는 것으로 보임.
+       */}
+      <Link
+        href="/post/ssg-ssr"
+        style={{ textDecoration: 'underline', color: '-webkit-link' }}
+        scroll={false}
+      >
+        scroll option is false
+      </Link>
     </>
   )
 }
